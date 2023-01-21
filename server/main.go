@@ -1,7 +1,10 @@
+//Please go through ReadMe file before running this code.
+
 package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
 
@@ -27,14 +30,19 @@ func main() {
 	}
 }
 
-// var fakeDb []string
-
 func (s *server) GreetUser(ctx context.Context, request *pb.Request) (*pb.Response, error) {
 	log.Printf("Received: %v", request.GetName())
 	// fakeDb = append(fakeDb, request.GetName())
-	// for range fakeDb {
-	// 	fmt.Print(fakeDb)
-	// }
+
+	//Using slice as a fake database just to note the user inputs
+	//although a database can be connected, Please check my "golang-portfolio"
+	//to know how to connect postgresDB and perform CRUD operations.
+	var fakeDb []string
+	fakeDb = append(fakeDb, request.GetName())
+	for range fakeDb {
+		fmt.Print(fakeDb)
+	}
+
 	return &pb.Response{Greetings: request.GetName()}, nil
 
 }

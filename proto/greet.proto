@@ -3,14 +3,18 @@ package proto;
 
 option go_package = "./proto";
 
+//input from the user
 message Request {
     string name = 1;
 }
 
+//response from the server which includes greeting message
 message Response {
     string greetings = 1; 
 }
 
+//Greeting service definition
 service GreetUserService {
+    //this func sends the greeting. 
     rpc GreetUser(Request) returns (Response);
 }

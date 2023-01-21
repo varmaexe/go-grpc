@@ -2,11 +2,10 @@
 
 This is a basic gRPC server and client written in Go. It is based on the [gRPC Quickstart](https://grpc.io/docs/quickstart/go.html) and [gRPC Basics: Go](https://grpc.io/docs/tutorials/basic/go.html) tutorials.
 
-We have implemented a simple gRPC server and client with the following functionality:
+I have implemented a simple gRPC server and client with the following functionality:
 - simple RPC
-- server-side streaming RPC
-- client-side streaming RPC
-- bidirectional streaming RPC
+- Greets the user from frontend
+
 
 # Setting up a gRPC-Go project
 1. Create a new directory for your project and cd into it
@@ -47,8 +46,8 @@ protoc --go_out=. --go-grpc_out=. proto/greet.proto
 OR this -
 
 ```bash
-protoc --go_out=. --go_opt=module=github.com/akhil/basic-go-grpc --go-grpc_out=. --go-grpc_opt=module=githu
-b.com/akhil/basic-go-grpc proto/greet.proto
+protoc --go_out=. --go_opt=module=github.com/your_username/basic-go-grpc --go-grpc_out=. --go-grpc_opt=module=githu
+b.com/your_username/basic-go-grpc proto/greet.proto
 ```
 
 6. Create the server and client directories and create the main.go files with necessary controllers and services
